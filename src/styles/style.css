@@ -1,0 +1,371 @@
+:root {
+  --header-height: 3rem;
+  --nav-width: 68px;
+
+  --first-color: #5E6E82;
+  --first-color-alt: #F7F6FB;
+  --white-color: #F7F6FB;
+}
+
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  position: relative;
+  margin: var(--header-height) 0 0 0;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-family: 'Nunito Sans', sans-serif;
+  transition: 0.5s;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: var(--header-height);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white-color);
+  padding: 0 1rem;
+  transition: 0.5s;
+}
+
+.header-toggle {
+  font-size: 1.25rem;
+  cursor: pointer;
+  color: var(--first-color);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -30%;
+  height: 100vh;
+  width: var(--nav-width);
+  background-color: var(--first-color);
+  padding-top: 1rem;
+  transition: 0.5s;
+}
+
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  max-width: 190px;
+}
+
+.input {
+  width: 100%;
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #ffffff;
+  color: #0d0c22;
+  transition: .3s ease;
+}
+
+.input::placeholder {
+  font-size: 14px;
+  color: var(--first-color);
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: var(--first-color);
+  width: 1rem;
+  height: 1rem;
+}
+
+.header__img {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.header__img img {
+  width: 40px;
+  object-fit: cover;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  height: 100%;
+}
+
+.nav-logo,
+.nav-link {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 28px;
+  padding: 0.5rem 0 0.5rem 1.5rem;
+}
+
+.nav-logo {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.nav-logo img {
+  margin-left: -5px;
+  width: 35px;
+}
+
+.nav-logo-icon {
+  font-size: 1.25rem;
+  color: var(--white-color);
+  cursor: pointer;
+}
+
+.nav-logo-name {
+  font-weight: 700;
+  margin-left: -40px;
+  margin-top: 8px;
+  color: var(--white-color);
+}
+
+.nav-link {
+  position: relative;
+  color: var(--first-color-alt);
+  transition: 0.5s;
+  margin-bottom: 1.5rem;
+}
+
+.nav-link:hover {
+  color: var(--white-color);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* .active {
+  color: var(--white-color);
+  background-color: rgba(0, 0, 0, 0.1);
+} */
+
+/* .active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 38px;
+  width: 3px;
+  background-color: var(--white-color);
+  transition: 0.5s;
+} */
+
+.show {
+  left: 0;
+}
+
+.space-toggle {
+  padding-left: calc(var(--nav-width) + 1rem);
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding: 0 1rem 0 calc(var(--nav-width) + 2rem);
+  }
+
+  .header {
+    height: calc(var(--header-height) + 1rem);
+    padding-left: calc(var(--nav-width) + 2rem);
+  }
+
+  .sidebar {
+    left: 0;
+    padding: 1rem 0 0 0;
+  }
+
+  .show {
+    width: calc(var(--header-height) + 156px);
+  }
+
+  .space-toggle {
+    padding-left: calc(var(--nav-width) + 188px);
+  }
+}
+
+
+/* MUSIC */
+
+
+.music-list{
+  /*background-color: #9b9b9b;*/
+  position: relative;
+  width: 230%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  left: -350px;
+  /*flex-wrap: wrap;*/
+}
+
+.music-card{
+  width: 250px;
+  /*background-color: #eaeaea;*/
+  text-align: left;
+}
+
+.music-card .name-music{
+  margin: 2px 0 5px 15px;
+  font-weight: 800;
+}
+
+.music-card .author-music{
+  margin: 3px 0 5px 15px;
+  color: #afafaf;
+}
+
+.music-card .albom-fon{
+  width: 90%;
+  height: 200px;
+  background-color: #5E6E82;
+  margin: 0 auto;
+  border-radius: 10px;
+  text-align: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.music-card .albom-fon img{
+  width: 130px;
+  height: 130px;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  margin-top: 25px;
+}
+
+
+/* .music-card .albom-fon:hover{
+  filter: brightness(50%);
+} */
+
+/* #playIMG{
+  position: relative;
+  z-index: 15;
+  width: 150px;
+  height: 150px;
+  top: -170px;
+} */
+
+
+/*.music-card .albom-fon button{*/
+/*  position: relative;*/
+/*  align-items: center;*/
+/*  z-index: 10;*/
+/*  margin-top: -190px;*/
+/*  background-color: rgba(0, 0, 0, 0);*/
+/*  width: 50%;*/
+/*  height: 50%;*/
+/*  border-radius: 5px;*/
+/*  top: -24px;*/
+/*  !*display: none;*!*/
+/*  cursor: pointer;*/
+/*  background-repeat: no-repeat;*/
+/*  transform: scale(2);*/
+/*}*/
+
+
+
+
+.player-controls{
+  height: 80px;
+  width: 100%;
+  background-color: #ececec;
+}
+
+.AudioPlayer{
+  position: relative;
+  left: -378px;
+  display: flex;
+  width: 252%;
+}
+
+.AudioPlayer #leftBut{
+  background-image: url(../img/rewind-left.svg);
+  width: 30px;
+  height: 30px;
+  transform: scale(1.5);
+  margin: 30px 30px 0 30px;
+  position: absolute;
+  left: 420px;
+}
+.AudioPlayer #rightBut{
+  background-image: url(../img/rewind-right.svg);
+  width: 30px;
+  height: 30px;
+  transform: scale(1.5);
+  margin: 30px 30px 0 30px;
+  position: absolute;
+  right: 490px;
+}
+
+.AudioPlayer #CloseBut{
+  position: relative;
+  top: -15px;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: 800;
+}
+.AudioPlayer #CloseBut:hover{
+  background-color: #e0e0e0;
+
+}
+
+/* Изменение цвета полосы прогресса и ползунка */
+.rhap_progress-container,
+.rhap_progress-bar
+{
+  margin-top: -30px;
+}
+
+.rhap_main-controls{
+  position: absolute;
+  margin: 0 auto;
+  justify-content: center;
+  width: 200px;
+  right: 540px;
+  bottom: 10px;
+}
+
+.rhap_button-clear.rhap_repeat-button{
+  position: absolute;
+  bottom: 15px;
+  left: 400px;
+}
+
+.AudioPlayer img{
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
